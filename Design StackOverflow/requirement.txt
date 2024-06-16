@@ -1,0 +1,47 @@
+Users should be able to register, log in, and log out of the system.
+Users can post questions, answer questions, and comment on questions and answers.
+Questions should have tags associated with them for categorization and easy searching.
+Users can vote on questions and ansersw to indicate their relevance and quality.
+The system should have a reputation system based on user activity and the quality of their contributions.
+Users can search for questions based on keywords, tags, or user profiles.
+The system should handle concurrent access and ensure data consistency.
+
+-----------------------------------------------
+User Journey -> Register, LogIn, LogOut
+Questions Class
+Answers Class
+Search functionality
+Manager class -> base class 
+
+-------------------------------
+
+USERS 
+Types of user -> Admin / normal user / elevated accesses? (Delete other posts)
+Account (Interface) -> User and Admin can implement it 
+Keep it simple for user only
+user has a reputation
+
+Register -> Save user instance (obj) in DB
+LogIn -> Validate
+Logout -> redirect to login page / remove user from session
+
+List of questions, answers and comments
+
+------
+
+QUESTIONS 
+Who posted, when    posted, upvotes, list of ans ids, list of comment id (keep id or the whole object)
+
+--- 
+
+ANSWERS 
+Who posted, when posted, upvotes, question_id
+
+-----
+TAGS 
+id, string
+
+---- 
+
+IDs should come from the DB -> for anything new I'll pass -1
+then if -1, means a new entity -> persist in DB and save the ID
