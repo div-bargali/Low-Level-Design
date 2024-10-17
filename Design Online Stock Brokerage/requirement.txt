@@ -1,0 +1,33 @@
+----- Requirements --
+The online stock brokerage system should allow users to create and manage their trading accounts.
+Users should be able to buy and sell stocks, as well as view their portfolio and transaction history.
+The system should provide real-time stock quotes and market data to users.
+The system should handle order placement, execution, and settlement processes.
+The system should enforce various business rules and validations, such as checking account balances and stock availability.
+The system should handle concurrent user requests and ensure data consistency and integrity.
+The system should be scalable and able to handle a large number of users and transactions.
+The system should be secure and protect sensitive user information.
+
+---- Journey ---
+1. User -> creates an account -> login / logout
+2. Vien successful placement
+4. View their portfoliow all stocks -> StockManager (list_all_stocks)
+3. Place an Order (Buy / Sell) 
+    3.1 OrderManager will first do some validations
+    3.2 settlement -> Buys (deduct from source) / Sells (Credit to source)
+
+Optional - 
+1. View history of orders placed
+2. Order completion strategy, for Buy orders (debit from bank/UPI)
+
+-- CLASSES -- 
+Account (Interface) -> User / Admin
+    List of all stocks -> Portfolio
+Stock 
+Order (Buy or Sell)
+OrderManager (manages all orders)
+Portfolio
+    Total amount
+    Total Investment
+    Net P/L
+    List<Stocks>
